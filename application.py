@@ -7,9 +7,9 @@ Original file is located at
     https://colab.research.google.com/drive/1m5KFDcKlTwXAj0Hmr8kWBWYXWOycolsE
 """
 
-!pip install moviepy
-!pip install opencv-python
-!pip install tensorflow
+# !pip install moviepy
+# !pip install opencv-python
+# !pip install tensorflow
 
 import numpy as np
 import cv2
@@ -27,6 +27,10 @@ class Lanes():
 def road_lines(image):
 
     # Get image ready for feeding into model
+    # Load Keras model
+    model = load_model('full_CNN_model.h5')
+    # Create lanes object
+    lanes = Lanes()
     small_img = cv2.resize(image, (160, 80))
     small_img = np.array(small_img)
     small_img = small_img[None,:,:,:]
@@ -57,11 +61,7 @@ def road_lines(image):
 
 
 if __name__ == '__main__':
-    # Load Keras model
-    model = load_model('/content/full_CNN_model.h5')
-    # Create lanes object
-    lanes = Lanes()
-
+   
     # Where to save the output video
     vid_output = 'proj_reg_vid.mp4'
     # Location of the input video
@@ -70,5 +70,5 @@ if __name__ == '__main__':
     vid_clip = clip1.fl_image(road_lines)
     vid_clip.write_videofile(vid_output, audio=False)
 
-!pip install streamlit
+# !pip install streamlit
 
