@@ -31,13 +31,15 @@ if selected == "Simuler":
     st.write('Pour commencer, téléchargez un fichier vidéo et cliquez sur le bouton ci-dessous pour démarrer le processus de détection de voies.')
 
     uploaded_file = st.file_uploader("Choisir une vidéo...", type="mp4")
-    st.subheader("Voici quelques exemples de vidéos pour tester le modèle de détection de voies.")
+    st.subheader("Voici un exemple de vidéos pour tester le modèle de détection de voies.")
 
      # Ajouter la première vidéo
     st.write('Exemple 1:')
     video_file1 = open('project_video.mp4', 'rb')
     video_bytes1 = video_file1.read()
     st.video(video_bytes1)
+    if st.button('Tester'):
+        uploaded_file=video_bytes1
     
     if uploaded_file is not None:
         st.video(uploaded_file)
