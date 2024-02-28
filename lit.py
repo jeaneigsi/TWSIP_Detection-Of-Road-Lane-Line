@@ -13,7 +13,7 @@ st.cache_data.clear()
 with st.sidebar:
     selected = option_menu(
         menu_title="Menu Principal",
-        options=["Simuler", "Performance"],
+        options=["Simuler"],
     )
 
 if selected == "Simuler":
