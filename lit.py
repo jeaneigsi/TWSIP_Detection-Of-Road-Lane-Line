@@ -15,7 +15,13 @@ with st.sidebar:
         menu_title="Menu Principal",
         options=["Simuler"],
     )
-
+    st.markdown(""" 
+                <style>
+                .st-emotion-cache-6qob1r{
+                    background: #F5A21F!important;
+                    color: #ffffff!important;              
+                }
+                </style>""", unsafe_allow_html=True)
 if selected == "Simuler":
     # Titre et sous-titre
     st.title('Détection de voies par apprentissage automatique :parrot:')
