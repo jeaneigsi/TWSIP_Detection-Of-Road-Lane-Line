@@ -75,7 +75,3 @@ if selected == "Simuler":
 
     else:
         st.markdown('**:blue[Veuillez télécharger un fichier vidéo]**.')
-
-if selected == "Performance":
-    st.title('**Les Performances du modèle**')
-    st.subheader('Les performances du modèle sont présentées ci-dessous...')
